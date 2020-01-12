@@ -14,12 +14,13 @@ if (version_compare(PHP_VERSION, '5.6.30', '<')) {
  * Put this file in the your WordPress root folder, leave ABSPATH
  * defined  as './'.
  */
-if (!file_exists(__DIR__."/config.php")) {
-    die('No config.php, copy config_example.php to config.php and change settings there');
+if (!file_exists(__DIR__ . "/config.php")) {
+    die('No config.php, copy config_example.php to config.php and change settings there' . PHP_EOL);
 }
+
 require __DIR__ . "/config.php";
 
-foreach ($config['CHECK_PATH'] as $path) {
+foreach ($config['CHECK_PATH'] as $path) {  // Check all in path
     checkWordpress($path, $config);
 }
 
